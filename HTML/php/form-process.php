@@ -25,7 +25,7 @@ if (empty($_POST["phone"])) {
 if (empty($_POST["address"])) {
     $errorMSG .= "Address is required ";
 } else {
-    $message = filter_var($_POST["address"], FILTER_SANITIZE_SPECIAL_CHARS);
+    $address = filter_var($_POST["address"], FILTER_SANITIZE_SPECIAL_CHARS);
 }
 
 
