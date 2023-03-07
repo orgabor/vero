@@ -17,11 +17,11 @@ function submitForm(){
     var email = $("#p_email").val();
     var phone = $("#p_phone").val();
     var message = $("#p_message").val();
-
+    var address = $("#p_address").val();
     $.ajax({
         type: "POST",
         url: "php/form-process.php",
-        data: "name=" + name + "&email=" + email + "&phone=" + phone + "&message=" + message,
+        data: "name=" + name + "&email=" + email + "&phone=" + phone + "&address=" + address + "&message=" + message,
         success : function(text){
             if (text == "success"){
                 formSuccess();

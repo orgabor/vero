@@ -21,6 +21,12 @@ if (empty($_POST["phone"])) {
 } else {
     $phone = filter_var($_POST["phone"], FILTER_SANITIZE_NUMBER_FLOAT);
 }
+// Address
+if (empty($_POST["address"])) {
+    $errorMSG .= "Address is required ";
+} else {
+    $message = filter_var($_POST["address"], FILTER_SANITIZE_SPECIAL_CHARS);
+}
 
 
 // MESSAGE
@@ -44,6 +50,9 @@ $Body .= $email;
 $Body .= "\n";
 $Body .= "Phone: ";
 $Body .= $phone;
+$Body .= "\n";
+$Body .= "Address: ";
+$Body .= $address;
 $Body .= "\n";
 $Body .= "Message: ";
 $Body .= $message;
